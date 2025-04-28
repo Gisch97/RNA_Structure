@@ -61,7 +61,7 @@ while (my $row = $csv_in->getline($fh_in)) {
     # @non_comment = ( seq, dotbracket, labels )
     $motivos = $non_comment[2] // '';
 
-    # 5) Añadimos labels al row y lo escribimos
+    # 5) Añadimos motivos al row y lo escribimos
     push @$row, $motivos;
     $csv_out->print($fh_out, $row);
 }
@@ -69,4 +69,4 @@ while (my $row = $csv_in->getline($fh_in)) {
 close $fh_in;
 close $fh_out;
 
-print "He generado '$outfile' con la columna adicional 'labels'.\n";
+print "He generado '$outfile' con la columna adicional 'motivos'.\n";
